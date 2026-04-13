@@ -231,7 +231,7 @@ export default function TasksPage() {
                     <div className="grid grid-cols-2 gap-3">
                       <div className="space-y-1">
                         <Label>Project <span className="text-destructive">*</span></Label>
-                        <Select value={form.project_id ?? ''} onValueChange={(v) => setForm({ ...form, project_id: v })}>
+                        <Select value={form.project_id ?? ''} onValueChange={(v) => setForm({ ...form, project_id: v ?? form.project_id })}>
                           <SelectTrigger><SelectValue placeholder="Select..." /></SelectTrigger>
                           <SelectContent>
                             {(projects as { id: number; name: string }[]).map((p) => (
@@ -242,7 +242,7 @@ export default function TasksPage() {
                       </div>
                       <div className="space-y-1">
                         <Label>Priority</Label>
-                        <Select value={form.priority ?? ''} onValueChange={(v) => setForm({ ...form, priority: v })}>
+                        <Select value={form.priority ?? ''} onValueChange={(v) => setForm({ ...form, priority: v ?? form.priority })}>
                           <SelectTrigger><SelectValue /></SelectTrigger>
                           <SelectContent>
                             {TASK_PRIORITIES.map((p) => (
@@ -255,7 +255,7 @@ export default function TasksPage() {
                     <div className="grid grid-cols-2 gap-3">
                       <div className="space-y-1">
                         <Label>Status</Label>
-                        <Select value={form.status ?? ''} onValueChange={(v) => setForm({ ...form, status: v })}>
+                        <Select value={form.status ?? ''} onValueChange={(v) => setForm({ ...form, status: v ?? form.status })}>
                           <SelectTrigger><SelectValue /></SelectTrigger>
                           <SelectContent>
                             {TASK_STATUSES.map((s) => (
@@ -266,7 +266,7 @@ export default function TasksPage() {
                       </div>
                       <div className="space-y-1">
                         <Label>Assign To</Label>
-                        <Select value={form.assignee_id ?? ''} onValueChange={(v) => setForm({ ...form, assignee_id: v })}>
+                        <Select value={form.assignee_id ?? ''} onValueChange={(v) => setForm({ ...form, assignee_id: v ?? form.assignee_id })}>
                           <SelectTrigger><SelectValue placeholder="Select..." /></SelectTrigger>
                           <SelectContent>
                             {assignableUsers.map((u) => (

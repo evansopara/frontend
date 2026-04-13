@@ -74,7 +74,7 @@ export default function IssuesPage() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label>Project (optional)</Label>
-                    <Select value={form.project_id} onValueChange={(v) => setForm({ ...form, project_id: v })}>
+                    <Select value={form.project_id} onValueChange={(v) => setForm({ ...form, project_id: v ?? form.project_id })}>
                       <SelectTrigger><SelectValue placeholder="None" /></SelectTrigger>
                       <SelectContent>
                         <SelectItem value="">None</SelectItem>
@@ -86,7 +86,7 @@ export default function IssuesPage() {
                   </div>
                   <div className="space-y-1">
                     <Label>Priority</Label>
-                    <Select value={form.priority} onValueChange={(v) => setForm({ ...form, priority: v })}>
+                    <Select value={form.priority} onValueChange={(v) => setForm({ ...form, priority: v ?? form.priority })}>
                       <SelectTrigger><SelectValue /></SelectTrigger>
                       <SelectContent>
                         {['low', 'medium', 'high', 'urgent'].map((p) => (

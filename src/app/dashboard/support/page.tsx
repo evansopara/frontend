@@ -68,7 +68,7 @@ export default function SupportPage() {
                 </div>
                 <div className="space-y-1">
                   <Label>Priority</Label>
-                  <Select value={form.priority} onValueChange={(v) => setForm({ ...form, priority: v })}>
+                  <Select value={form.priority} onValueChange={(v) => setForm({ ...form, priority: v ?? form.priority })}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {['low', 'medium', 'high', 'urgent'].map((p) => (

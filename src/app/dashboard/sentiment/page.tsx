@@ -57,7 +57,7 @@ export default function SentimentPage() {
               <div className="space-y-3 mt-2">
                 <div className="space-y-1">
                   <Label>Project</Label>
-                  <Select value={form.project_id} onValueChange={(v) => setForm({ ...form, project_id: v })}>
+                  <Select value={form.project_id} onValueChange={(v) => setForm({ ...form, project_id: v ?? form.project_id })}>
                     <SelectTrigger><SelectValue placeholder="Select project..." /></SelectTrigger>
                     <SelectContent>
                       {projects.map((p: Project) => (
@@ -68,7 +68,7 @@ export default function SentimentPage() {
                 </div>
                 <div className="space-y-1">
                   <Label>Sentiment</Label>
-                  <Select value={form.sentiment} onValueChange={(v) => setForm({ ...form, sentiment: v })}>
+                  <Select value={form.sentiment} onValueChange={(v) => setForm({ ...form, sentiment: v ?? form.sentiment })}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="positive">😊 Positive</SelectItem>

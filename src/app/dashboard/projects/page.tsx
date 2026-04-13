@@ -182,7 +182,7 @@ export default function ProjectsPage() {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-1">
                       <Label>Category <span className="text-destructive">*</span></Label>
-                      <Select value={form.category} onValueChange={(v) => setForm({ ...form, category: v as ProjectCategory })}>
+                      <Select value={form.category} onValueChange={(v) => setForm({ ...form, category: (v ?? form.category) as ProjectCategory })}>
                         <SelectTrigger><SelectValue placeholder="Select category..." /></SelectTrigger>
                         <SelectContent>
                           {CATEGORIES.map((c) => (
@@ -193,7 +193,7 @@ export default function ProjectsPage() {
                     </div>
                     <div className="space-y-1">
                       <Label>Client</Label>
-                      <Select value={form.client_id} onValueChange={(v) => setForm({ ...form, client_id: v })}>
+                      <Select value={form.client_id} onValueChange={(v) => setForm({ ...form, client_id: v ?? form.client_id })}>
                         <SelectTrigger><SelectValue placeholder="Select client..." /></SelectTrigger>
                         <SelectContent>
                           {clients.map((c) => (

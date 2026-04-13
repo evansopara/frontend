@@ -67,7 +67,7 @@ export default function LeavePage() {
               <div className="space-y-3 mt-2">
                 <div className="space-y-1">
                   <Label>Leave Type</Label>
-                  <Select value={form.leave_type} onValueChange={(v) => setForm({ ...form, leave_type: v })}>
+                  <Select value={form.leave_type} onValueChange={(v) => setForm({ ...form, leave_type: v ?? form.leave_type })}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {['annual', 'sick', 'personal', 'emergency', 'maternity', 'paternity', 'unpaid'].map((t) => (

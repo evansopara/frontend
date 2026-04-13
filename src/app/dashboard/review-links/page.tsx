@@ -82,7 +82,7 @@ export default function ReviewLinksPage() {
                 </div>
                 <div className="space-y-1">
                   <Label>Assign To</Label>
-                  <Select value={form.assigned_to} onValueChange={(v) => setForm({ ...form, assigned_to: v })}>
+                  <Select value={form.assigned_to} onValueChange={(v) => setForm({ ...form, assigned_to: v ?? form.assigned_to })}>
                     <SelectTrigger><SelectValue placeholder="Select person..." /></SelectTrigger>
                     <SelectContent>
                       {users.filter((u: User) => u.id !== user?.id).map((u: User) => (
