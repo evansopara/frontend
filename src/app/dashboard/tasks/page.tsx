@@ -517,7 +517,7 @@ export default function TasksPage() {
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <Label>Project</Label>
-                  <Select value={editForm.project_id ?? ''} onValueChange={(v) => setEditForm({ ...editForm, project_id: v })}>
+                  <Select value={editForm.project_id ?? ''} onValueChange={(v) => setEditForm({ ...editForm, project_id: v ?? editForm.project_id })}>
                     <SelectTrigger><SelectValue placeholder="Select..." /></SelectTrigger>
                     <SelectContent>
                       {(projects as { id: number; name: string }[]).map((p) => (
@@ -528,7 +528,7 @@ export default function TasksPage() {
                 </div>
                 <div className="space-y-1">
                   <Label>Priority</Label>
-                  <Select value={editForm.priority ?? ''} onValueChange={(v) => setEditForm({ ...editForm, priority: v })}>
+                  <Select value={editForm.priority ?? ''} onValueChange={(v) => setEditForm({ ...editForm, priority: v ?? editForm.priority })}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {TASK_PRIORITIES.map((p) => (
@@ -541,7 +541,7 @@ export default function TasksPage() {
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <Label>Status</Label>
-                  <Select value={editForm.status ?? ''} onValueChange={(v) => setEditForm({ ...editForm, status: v })}>
+                  <Select value={editForm.status ?? ''} onValueChange={(v) => setEditForm({ ...editForm, status: v ?? editForm.status })}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {TASK_STATUSES.map((s) => (
@@ -552,7 +552,7 @@ export default function TasksPage() {
                 </div>
                 <div className="space-y-1">
                   <Label>Assign To</Label>
-                  <Select value={editForm.assignee_id ?? ''} onValueChange={(v) => setEditForm({ ...editForm, assignee_id: v })}>
+                  <Select value={editForm.assignee_id ?? ''} onValueChange={(v) => setEditForm({ ...editForm, assignee_id: v ?? editForm.assignee_id })}>
                     <SelectTrigger><SelectValue placeholder="Select..." /></SelectTrigger>
                     <SelectContent>
                       {assignableUsers.map((u) => (

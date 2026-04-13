@@ -146,7 +146,7 @@ export default function LeavePage() {
             <div className="space-y-3 mt-2">
               <div className="space-y-1">
                 <Label>Decision</Label>
-                <Select value={decision.status} onValueChange={(v) => setDecision({ ...decision, status: v })}>
+                <Select value={decision.status} onValueChange={(v) => setDecision({ ...decision, status: v ?? decision.status })}>
                   <SelectTrigger><SelectValue /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="approved">Approve</SelectItem>
