@@ -51,6 +51,7 @@ export interface Project {
   creator?: User;
   members?: ProjectMember[];
   tasks?: Task[];
+  resources?: Resource[];
   created_at: string;
   updated_at: string;
 }
