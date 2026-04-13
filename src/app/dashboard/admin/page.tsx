@@ -106,7 +106,7 @@ export default function AdminPage() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label>Role</Label>
-                    <Select value={form.role} onValueChange={(v) => setForm({ ...form, role: v })}>
+                    <Select value={form.role} onValueChange={(v) => setForm({ ...form, role: v ?? form.role })}>
                       <SelectTrigger><SelectValue /></SelectTrigger>
                       <SelectContent>
                         {['operations_manager', 'team_lead', 'project_manager', 'staff', 'intern', 'customer_support_officer', 'client'].map((r) => (
