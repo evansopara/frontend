@@ -116,7 +116,7 @@ export default function SupportPage() {
                       <Badge className={`text-xs ${priorityColor(req.priority)}`} variant="outline">{req.priority}</Badge>
                     )}
                     {canManage ? (
-                      <Select value={req.status} onValueChange={(v) => updateMutation.mutate({ id: req.id, data: { status: v } })}>
+                      <Select value={req.status} onValueChange={(v) => v && updateMutation.mutate({ id: req.id, data: { status: v } })}>
                         <SelectTrigger className="h-7 text-xs w-28">
                           <SelectValue />
                         </SelectTrigger>

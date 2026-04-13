@@ -117,7 +117,7 @@ export default function ComplaintsPage() {
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     {canManage ? (
-                      <Select value={c.status} onValueChange={(v) => updateMutation.mutate({ id: c.id, data: { status: v } })}>
+                      <Select value={c.status} onValueChange={(v) => v && updateMutation.mutate({ id: c.id, data: { status: v } })}>
                         <SelectTrigger className="h-7 text-xs w-24">
                           <SelectValue />
                         </SelectTrigger>

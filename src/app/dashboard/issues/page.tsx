@@ -138,7 +138,7 @@ export default function IssuesPage() {
                   <div className="flex items-center gap-2 shrink-0">
                     {issue.priority && <Badge className={`text-xs ${priorityColor(issue.priority)}`} variant="outline">{issue.priority}</Badge>}
                     {canManage ? (
-                      <Select value={issue.status} onValueChange={(v) => updateMutation.mutate({ id: issue.id, data: { status: v } })}>
+                      <Select value={issue.status} onValueChange={(v) => v && updateMutation.mutate({ id: issue.id, data: { status: v } })}>
                         <SelectTrigger className="h-7 text-xs w-24">
                           <SelectValue />
                         </SelectTrigger>

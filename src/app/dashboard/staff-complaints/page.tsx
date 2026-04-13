@@ -106,7 +106,7 @@ export default function StaffComplaintsPage() {
                     <p className="text-xs text-muted-foreground mt-1">{timeAgo(c.created_at)}</p>
                   </div>
                   {canManage ? (
-                    <Select value={c.status} onValueChange={(v) => updateMutation.mutate({ id: c.id, data: { status: v } })}>
+                    <Select value={c.status} onValueChange={(v) => v && updateMutation.mutate({ id: c.id, data: { status: v } })}>
                       <SelectTrigger className="h-7 text-xs w-24 shrink-0">
                         <SelectValue />
                       </SelectTrigger>

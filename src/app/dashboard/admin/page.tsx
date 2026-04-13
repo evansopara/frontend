@@ -173,7 +173,7 @@ export default function AdminPage() {
                       </div>
                     </td>
                     <td className="p-3">
-                      <Select value={u.role} onValueChange={(v) => updateMutation.mutate({ id: u.id, data: { role: v } })}>
+                      <Select value={u.role} onValueChange={(v) => v && updateMutation.mutate({ id: u.id, data: { role: v } })}>
                         <SelectTrigger className="h-7 text-xs w-36 border-0 bg-transparent p-0">
                           <SelectValue />
                         </SelectTrigger>
@@ -185,7 +185,7 @@ export default function AdminPage() {
                       </Select>
                     </td>
                     <td className="p-3">
-                      <Select value={u.status} onValueChange={(v) => updateMutation.mutate({ id: u.id, data: { status: v } })}>
+                      <Select value={u.status} onValueChange={(v) => v && updateMutation.mutate({ id: u.id, data: { status: v } })}>
                         <SelectTrigger className="h-7 text-xs w-24 border-0 bg-transparent p-0">
                           <Badge className={`text-xs ${statusColor(u.status)}`} variant="outline">{u.status}</Badge>
                         </SelectTrigger>
