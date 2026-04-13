@@ -144,7 +144,7 @@ export default function ProjectsPage() {
               onChange={(e) => setSearch(e.target.value)}
               className="max-w-xs"
             />
-            <Select value={statusFilter} onValueChange={setStatusFilter}>
+            <Select value={statusFilter} onValueChange={(v) => v && setStatusFilter(v)}>
               <SelectTrigger className="w-36"><SelectValue /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Status</SelectItem>
